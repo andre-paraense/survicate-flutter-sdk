@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
     </list>
@@ -101,15 +97,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="Refactoring listeners and Android integration" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="123" width="1480" height="761" key="AVDManager" timestamp="1604510623559">
+    <state x="100" y="123" width="1480" height="760" key="AVDManager" timestamp="1604530530935">
       <screen x="0" y="23" width="1680" height="963" />
     </state>
-    <state x="100" y="123" width="1480" height="761" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604510623559" />
+    <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604530530935" />
     <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604509596493">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604509596493" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
+    <state x="467" y="213" key="RollbackChangesDialog" timestamp="1604531244880">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531244880" />
     <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604509598547">
       <screen x="0" y="23" width="1680" height="961" />
     </state>

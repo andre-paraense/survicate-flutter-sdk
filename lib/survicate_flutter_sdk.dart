@@ -26,7 +26,7 @@ class SurvicateFlutterSdk {
   @visibleForTesting
   Future<dynamic> handlerMethodCalls(MethodCall call) async {
     switch (call.method) {
-      case 'onSurveyDisplayedListener':
+      case 'onSurveyDisplayed':
         if (onSurveyDisplayedListener == null) {
           return false;
         }
@@ -44,7 +44,7 @@ class SurvicateFlutterSdk {
         onSurveyDisplayedListener(surveyId);
         return true;
 
-      case 'onQuestionAnsweredListener':
+      case 'onQuestionAnswered':
         if (onQuestionAnsweredListener == null) {
           return false;
         }
@@ -64,7 +64,7 @@ class SurvicateFlutterSdk {
         onQuestionAnsweredListener(surveyId, questionId, answer);
         return true;
 
-      case 'onSurveyClosedListener':
+      case 'onSurveyClosed':
         if (onSurveyClosedListener == null) {
           return false;
         }
@@ -82,7 +82,7 @@ class SurvicateFlutterSdk {
         onSurveyClosedListener(surveyId);
         return true;
 
-      case 'onSurveyCompletedListener':
+      case 'onSurveyCompleted':
         if (onSurveyCompletedListener == null) {
           return false;
         }

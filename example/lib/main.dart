@@ -79,6 +79,14 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 onPressed: () {
+                  setState(() {
+                    surveyIdDisplayed = null;
+                    surveyIdAnswered = null;
+                    questionIdAnswered = null;
+                    answer = null;
+                    surveyIdClosed = null;
+                    surveyIdCompleted = null;
+                  });
                   survicateFlutterSdk.reset();
                 },
                 child: Text('Reset'),
@@ -175,7 +183,7 @@ class _MyAppState extends State<MyApp> {
                   : SizedBox(),
               surveyIdCompleted != null
                   ? Text(
-                  'Last survey closed id = $surveyIdCompleted'
+                  'Last survey completed id = $surveyIdCompleted'
               )
                   : SizedBox(),
               surveyIdCompleted != null
