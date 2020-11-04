@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
-import 'package:survicate_flutter_sdk/survicate_flutter_sdk.dart';
-
 void main() {
   runApp(MyApp());
 }
