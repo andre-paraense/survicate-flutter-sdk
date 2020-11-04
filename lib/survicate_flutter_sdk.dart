@@ -6,21 +6,20 @@ import 'package:survicate_flutter_sdk/models/user_traits_model.dart';
 
 /// Client for accessing Survicate SDK.
 class SurvicateFlutterSdk {
+  /// listener triggered when survey gets loaded and appears in user’s interface.
   Function(String) onSurveyDisplayedListener;
+  /// listener triggered after a response submitted to each question.
   Function(String, num, SurvicateAnswerModel) onQuestionAnsweredListener;
+  /// listener triggered after user closes the survey using the close button.
   Function(String) onSurveyClosedListener;
+  /// triggered when user responds to their last question and therefore finishes a survey.
   Function(String) onSurveyCompletedListener;
 
   static const MethodChannel _channel =
       const MethodChannel('survicate_flutter_sdk');
 
   /// Constructor for the Client for accessing Survicate SDK.
-  ///
-  /// [onSurveyDisplayedListener] (optional) listener triggered when survey gets loaded and appears in user’s interface.
-  /// [onQuestionAnsweredListener] (optional) listener triggered after a response submitted to each question.
-  /// [onSurveyClosedListener] (optional) listener triggered after user closes the survey using the close button.
-  /// [onSurveyCompletedListener] (optional) listener triggered when user responds to their last question and therefore finishes a survey.
-  SurvicateFlutterSdk({this.onSurveyDisplayedListener, this.onQuestionAnsweredListener, this.onSurveyClosedListener, this.onSurveyCompletedListener}) {
+  SurvicateFlutterSdk() {
     _channel.setMethodCallHandler(handlerMethodCalls);
   }
 
@@ -222,22 +221,17 @@ class SurvicateFlutterSdk {
     return await _channel.invokeMethod('unregisterSurveyCompletedListener');
   }
 
-  /// Initializes the SDK in your application
-  Future<void> initialize() async {
-    await _channel.invokeMethod('initialize');
-  }
-
   /// You can log custom user events throughout your application.
   /// They can later be used in Survicate panel to trigger your surveys.
   /// Events trigger surveys instantly after occurring in your app.
   ///
   /// [eventName] the name of the event to be logged
-  Future<void> invokeEvent(String eventName) async {
+  Future<bool> invokeEvent(String eventName) async {
     if(eventName == null || eventName.isEmpty){
-      return;
+      return false;
     }
 
-    await _channel.invokeMethod('invokeEvent', <String, dynamic>{
+    return await _channel.invokeMethod('invokeEvent', <String, dynamic>{
       'eventName': eventName,
     });
   }
@@ -248,12 +242,12 @@ class SurvicateFlutterSdk {
   /// To achieve such effect, you need to send information to Survicate about user entering a screen.
   ///
   /// [screenName] the name of the screen the user is entering.
-  Future<void> enterScreen(String screenName) async {
+  Future<bool> enterScreen(String screenName) async {
     if(screenName == null || screenName.isEmpty){
-      return;
+      return false;
     }
 
-    await _channel.invokeMethod('enterScreen', <String, dynamic>{
+    return await _channel.invokeMethod('enterScreen', <String, dynamic>{
       'screenName': screenName,
     });
   }
@@ -264,12 +258,12 @@ class SurvicateFlutterSdk {
   /// To achieve such effect, you need to send information to Survicate about user leaving a screen.
   ///
   /// [screenName] the name of the screen the user is leaving.
-  Future<void> leaveScreen(String screenName) async {
+  Future<bool> leaveScreen(String screenName) async {
     if(screenName == null || screenName.isEmpty){
-      return;
+      return false;
     }
 
-    await _channel.invokeMethod('leaveScreen', <String, dynamic>{
+    return await _channel.invokeMethod('leaveScreen', <String, dynamic>{
       'screenName': screenName,
     });
   }
@@ -280,18 +274,18 @@ class SurvicateFlutterSdk {
   /// You can also change their values at any time (which may potentially trigger showing the survey).
   ///
   /// [userTraits] the  custom attributes to be assigned to your users.
-  Future<void> setUserTraits(UserTraitsModel userTraits) async {
+  Future<bool> setUserTraits(UserTraitsModel userTraits) async {
     if(userTraits == null || userTraits.toMap().isEmpty){
-      return;
+      return false;
     }
 
-    await _channel.invokeMethod('setUserTraits', userTraits.toMap());
+    return await _channel.invokeMethod('setUserTraits', userTraits.toMap());
 
   }
 
   /// This method will reset all user data stored on your device (views, traits, answers).
   /// If you need to test surveys on your device, this method might be helpful.
-  Future<void> reset() async {
-    await _channel.invokeMethod('reset');
+  Future<bool> reset() async {
+    return await _channel.invokeMethod('reset');
   }
 }

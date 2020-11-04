@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="" />
+    <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="API + test coverage">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +24,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1jmNktSqIQDZvmUzEXvJz0VIgko" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,5 +51,15 @@
       <updated>1604405452422</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="API + test coverage" />
+    <option name="LAST_COMMIT_MESSAGE" value="API + test coverage" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604491745494">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604491745494" />
   </component>
 </project>
