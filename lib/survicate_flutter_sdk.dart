@@ -105,120 +105,49 @@ class SurvicateFlutterSdk {
     }
   }
 
-  /// Registers a callback to be called when a survey gets loaded and appears in user’s interface.
+  /// Registers Survey activity listeners
   ///
-  /// [callback] the listener to attach
-  Future<bool> registerSurveyDisplayedListener(Function(String surveyId) callback) async {
-    if (callback == null) {
+  /// [callbackSurveyDisplayedListener] the listener to be called when a survey gets loaded and appears in user’s interface.
+  /// [callbackQuestionAnsweredListener] the listener to be called after a response submitted to each question.
+  /// [callbackSurveyClosedListener] the listener to be called after user closes the survey using the close button.
+  /// [callbackSurveyCompletedListener] the listener to be called when user responds to their last question and therefore finishes a survey.
+  Future<bool> registerSurveyListeners(
+      Function(String surveyId) callbackSurveyDisplayedListener,
+      Function(String surveyId, num questionId, SurvicateAnswerModel answer) callbackQuestionAnsweredListener,
+      Function(String surveyId) callbackSurveyClosedListener,
+      Function(String surveyId) callbackSurveyCompletedListener) async {
+    if (callbackSurveyDisplayedListener == null || callbackQuestionAnsweredListener == null || callbackSurveyClosedListener == null || callbackSurveyCompletedListener == null) {
       return false;
     }
 
-    if (onSurveyDisplayedListener != null) {
-      onSurveyDisplayedListener = callback;
+    if (onSurveyDisplayedListener != null || onQuestionAnsweredListener != null || onSurveyClosedListener != null || onSurveyCompletedListener != null) {
+      onSurveyDisplayedListener = callbackSurveyDisplayedListener;
+      onQuestionAnsweredListener = callbackQuestionAnsweredListener;
+      onSurveyClosedListener = callbackSurveyClosedListener;
+      onSurveyCompletedListener = callbackSurveyCompletedListener;
       return true;
     }
 
-    onSurveyDisplayedListener = callback;
-    return await _channel.invokeMethod('registerSurveyDisplayedListener');
+    onSurveyDisplayedListener = callbackSurveyDisplayedListener;
+    onQuestionAnsweredListener = callbackQuestionAnsweredListener;
+    onSurveyClosedListener = callbackSurveyClosedListener;
+    onSurveyCompletedListener = callbackSurveyCompletedListener;
+    return await _channel.invokeMethod('registerSurveyListeners');
   }
 
-  /// Unregisters a callback so it will no longer be called when a survey gets loaded and appears in user’s interface.
+  /// Unregisters Survey activity listeners
   ///
-  Future<bool> unregisterSurveyDisplayedListener() async {
+  Future<bool> unregisterSurveyListeners() async {
 
-    if (onSurveyDisplayedListener == null) {
+    if (onSurveyDisplayedListener == null && onQuestionAnsweredListener == null && onSurveyClosedListener == null && onSurveyCompletedListener == null) {
       return false;
     }
 
     onSurveyDisplayedListener = null;
-    return await _channel.invokeMethod('unregisterSurveyDisplayedListener');
-  }
-
-  /// Registers a callback to be called after a response submitted to each question.
-  ///
-  /// [callback] the listener to attach
-  Future<bool> registerQuestionAnsweredListener(Function(String surveyId, num questionId, SurvicateAnswerModel answer) callback) async {
-    if (callback == null) {
-      return false;
-    }
-
-    if (onQuestionAnsweredListener != null) {
-      onQuestionAnsweredListener = callback;
-      return true;
-    }
-
-    onQuestionAnsweredListener = callback;
-    return await _channel.invokeMethod('registerQuestionAnsweredListener');
-  }
-
-  /// Unregisters a callback so it will no longer be called after a response submitted to each question.
-  ///
-  Future<bool> unregisterQuestionAnsweredListener() async {
-
-    if (onQuestionAnsweredListener == null) {
-      return false;
-    }
-
     onQuestionAnsweredListener = null;
-    return await _channel.invokeMethod('unregisterQuestionAnsweredListener');
-  }
-
-  /// Registers a callback to be called after user closes the survey using the close button.
-  ///
-  /// [callback] the listener to attach
-  Future<bool> registerSurveyClosedListener(Function(String surveyId) callback) async {
-    if (callback == null) {
-      return false;
-    }
-
-    if (onSurveyClosedListener != null) {
-      onSurveyClosedListener = callback;
-      return true;
-    }
-
-    onSurveyClosedListener = callback;
-    return await _channel.invokeMethod('registerSurveyClosedListener');
-  }
-
-  /// Unregisters a callback so it will no longer be called after user closes the survey using the close button.
-  ///
-  Future<bool> unregisterSurveyClosedListener() async {
-
-    if (onSurveyClosedListener == null) {
-      return false;
-    }
-
     onSurveyClosedListener = null;
-    return await _channel.invokeMethod('unregisterSurveyClosedListener');
-  }
-
-  /// Registers a callback to be called when user responds to their last question and therefore finishes a survey.
-  ///
-  /// [callback] the listener to attach
-  Future<bool> registerSurveyCompletedListener(Function(String surveyId) callback) async {
-    if (callback == null) {
-      return false;
-    }
-
-    if (onSurveyCompletedListener != null) {
-      onSurveyCompletedListener = callback;
-      return true;
-    }
-
-    onSurveyCompletedListener = callback;
-    return await _channel.invokeMethod('registerSurveyCompletedListener');
-  }
-
-  /// Unregisters a callback so it will no longer be called when user responds to their last question and therefore finishes a survey.
-  ///
-  Future<bool> unregisterSurveyCompletedListener() async {
-
-    if (onSurveyCompletedListener == null) {
-      return false;
-    }
-
     onSurveyCompletedListener = null;
-    return await _channel.invokeMethod('unregisterSurveyCompletedListener');
+    return await _channel.invokeMethod('unregisterSurveyListeners');
   }
 
   /// You can log custom user events throughout your application.
