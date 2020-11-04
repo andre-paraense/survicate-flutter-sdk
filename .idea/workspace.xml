@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/CODEOWNERS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/feature_request.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/pull_request_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/cd.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,25 +53,33 @@
       <option name="project" value="LOCAL" />
       <updated>1604495322936</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding documentation">
+      <created>1604498620268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604498620268</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="API + test coverage" />
-    <option name="LAST_COMMIT_MESSAGE" value="API + test coverage" />
+    <MESSAGE value="Adding documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding documentation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604495322752">
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604498620122">
       <screen x="0" y="23" width="1680" height="965" />
     </state>
-    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604495322752" />
-    <state x="440" y="232" key="Vcs.Push.Dialog.v2" timestamp="1604495324288">
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604498620122" />
+    <state x="440" y="232" key="Vcs.Push.Dialog.v2" timestamp="1604498621320">
       <screen x="0" y="23" width="1680" height="965" />
     </state>
-    <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604495324288" />
-    <state x="532" y="260" width="615" height="490" key="find.popup" timestamp="1604498026221">
+    <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604498621320" />
+    <state x="532" y="260" width="750" height="490" key="find.popup" timestamp="1604498593967">
       <screen x="0" y="23" width="1680" height="965" />
     </state>
-    <state x="532" y="260" width="615" height="490" key="find.popup/0.23.1680.965@0.23.1680.965" timestamp="1604498026221" />
+    <state x="532" y="260" width="750" height="490" key="find.popup/0.23.1680.965@0.23.1680.965" timestamp="1604498593967" />
   </component>
 </project>

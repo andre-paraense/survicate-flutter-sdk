@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v1.3.2
-          with:
-            channel: 'stable'
+        with:
+          channel: 'stable'
       - run: flutter packages get
       - run: flutter analyze --no-pub
       - run: flutter test --coverage
