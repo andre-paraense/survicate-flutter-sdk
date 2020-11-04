@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/oakam/survicate/survicate_flutter_sdk/SurvicateFlutterSdkPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/oakam/survicate/survicate_flutter_sdk/SurvicateFlutterSdkPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
     </list>
@@ -18,7 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_29]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -80,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604499360116</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactoring listeners and Android integration">
+      <created>1604509596936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604509596936</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -88,16 +97,23 @@
     <MESSAGE value="Adding documentation" />
     <MESSAGE value="CI" />
     <MESSAGE value="Cleaning code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaning code" />
+    <MESSAGE value="Refactoring listeners and Android integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring listeners and Android integration" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604499359970">
-      <screen x="0" y="23" width="1680" height="965" />
+    <state x="100" y="123" width="1480" height="761" key="AVDManager" timestamp="1604510623559">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
+    <state x="100" y="123" width="1480" height="761" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604510623559" />
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604509596493">
+      <screen x="0" y="23" width="1680" height="961" />
+    </state>
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604509596493" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
-    <state x="440" y="232" key="Vcs.Push.Dialog.v2" timestamp="1604499361150">
-      <screen x="0" y="23" width="1680" height="965" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604509598547">
+      <screen x="0" y="23" width="1680" height="961" />
     </state>
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604509598547" />
     <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604499361150" />
     <state x="532" y="260" width="750" height="490" key="find.popup" timestamp="1604498593967">
       <screen x="0" y="23" width="1680" height="965" />

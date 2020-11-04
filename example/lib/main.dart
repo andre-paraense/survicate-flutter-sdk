@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+import 'package:survicate_flutter_sdk/models/survicate_answer_model.dart';
+import 'package:survicate_flutter_sdk/models/user_traits_model.dart';
+import 'package:survicate_flutter_sdk/survicate_flutter_sdk.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,32 +13,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  
+  SurvicateFlutterSdk survicateFlutterSdk;
+  String surveyIdDisplayed;
+  String surveyIdAnswered;
+  num questionIdAnswered;
+  SurvicateAnswerModel answer;
+  String surveyIdClosed;
+  String surveyIdCompleted;
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    // String platformVersion;
-    // // Platform messages may fail, so we use a try/catch PlatformException.
-    // try {
-    //   platformVersion = await SurvicateFlutterSdk.platformVersion;
-    // } on PlatformException {
-    //   platformVersion = 'Failed to get platform version.';
-    // }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    // setState(() {
-    //   _platformVersion = platformVersion;
-    // });
+    if(survicateFlutterSdk == null){
+      survicateFlutterSdk = SurvicateFlutterSdk();
+    }
   }
 
   @override
@@ -44,11 +35,157 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Survicate Flutter SDK example app'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
+        body: SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              RaisedButton(
+                onPressed: () {
+                  survicateFlutterSdk.invokeEvent('SURVEY');
+                },
+                child: Text('Invoke event SURVEY'),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  survicateFlutterSdk.enterScreen('SCREEN');
+                },
+                child: Text('Enter screen SCREEN'),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  survicateFlutterSdk.leaveScreen('SCREEN');
+                },
+                child: Text('Leave screen SCREEN'),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: '1', firstName: 'USER'));
+                },
+                child: Text('Set userId = 1 and first name = USER'),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  survicateFlutterSdk.reset();
+                },
+                child: Text('Reset'),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    surveyIdDisplayed = null;
+                    surveyIdAnswered = null;
+                    questionIdAnswered = null;
+                    answer = null;
+                    surveyIdClosed = null;
+                    surveyIdCompleted = null;
+                  });
+                  survicateFlutterSdk.registerSurveyListeners(
+                      callbackSurveyDisplayedListener: (surveyId) {
+                        setState(() {
+                          surveyIdDisplayed = surveyId;
+                        });
+                      },
+                      callbackQuestionAnsweredListener: (surveyId, questionId, answer) {
+                        setState(() {
+                          surveyIdAnswered = surveyId;
+                          questionIdAnswered = questionId;
+                          answer = answer;
+                        });
+                      },
+                      callbackSurveyClosedListener: (surveyId) {
+                        setState(() {
+                          surveyIdClosed = surveyId;
+                        });
+                      },
+                      callbackSurveyCompletedListener: (surveyId) {
+                        setState(() {
+                          surveyIdCompleted = surveyId;
+                        });
+                      }
+                  );
+                },
+                child: Text('Register survey activity listeners'),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    surveyIdDisplayed = null;
+                    surveyIdAnswered = null;
+                    questionIdAnswered = null;
+                    answer = null;
+                    surveyIdClosed = null;
+                    surveyIdCompleted = null;
+                  });
+                  survicateFlutterSdk.unregisterSurveyListeners();
+                },
+                child: Text('Unregister survey activity listeners'),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              surveyIdDisplayed != null
+                  ? Text(
+                  'Last survey displayed id = $surveyIdDisplayed'
+              )
+                  : SizedBox(),
+              surveyIdDisplayed != null
+                  ? SizedBox(
+                height: 5.0,
+              )
+                  : SizedBox(),
+              questionIdAnswered != null
+                  ? Text(
+                  'Last question answered id = $questionIdAnswered from survey id = $surveyIdAnswered, answer type ${answer.type}'
+              )
+                  : SizedBox(),
+              questionIdAnswered != null
+                  ? SizedBox(
+                height: 5.0,
+              )
+                  : SizedBox(),
+              surveyIdClosed != null
+                  ? Text(
+                  'Last survey closed id = $surveyIdClosed'
+              )
+                  : SizedBox(),
+              surveyIdClosed != null
+                  ? SizedBox(
+                height: 5.0,
+              )
+                  : SizedBox(),
+              surveyIdCompleted != null
+                  ? Text(
+                  'Last survey closed id = $surveyIdCompleted'
+              )
+                  : SizedBox(),
+              surveyIdCompleted != null
+                  ? SizedBox(
+                height: 5.0,
+              )
+                  : SizedBox(),
+            ],
+          ),
+        )
       ),
     );
   }

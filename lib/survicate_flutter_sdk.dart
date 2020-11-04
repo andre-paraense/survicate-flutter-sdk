@@ -111,11 +111,12 @@ class SurvicateFlutterSdk {
   /// [callbackQuestionAnsweredListener] the listener to be called after a response submitted to each question.
   /// [callbackSurveyClosedListener] the listener to be called after user closes the survey using the close button.
   /// [callbackSurveyCompletedListener] the listener to be called when user responds to their last question and therefore finishes a survey.
-  Future<bool> registerSurveyListeners(
+  Future<bool> registerSurveyListeners({
       Function(String surveyId) callbackSurveyDisplayedListener,
       Function(String surveyId, num questionId, SurvicateAnswerModel answer) callbackQuestionAnsweredListener,
       Function(String surveyId) callbackSurveyClosedListener,
-      Function(String surveyId) callbackSurveyCompletedListener) async {
+      Function(String surveyId) callbackSurveyCompletedListener
+  }) async {
     if (callbackSurveyDisplayedListener == null || callbackQuestionAnsweredListener == null || callbackSurveyClosedListener == null || callbackSurveyCompletedListener == null) {
       return false;
     }
