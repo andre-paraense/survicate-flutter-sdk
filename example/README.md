@@ -2,7 +2,7 @@
 
 Demonstrates how to use the survicate_flutter_sdk plugin.
 
-## Running th app
+## Running the app
 
 In order to run the example app, the first step is to create an account at [survicate.com](https://survicate.com). Sign up for free and find your workspace key in the Tracking Code section.
 
@@ -42,11 +42,11 @@ When you run the example app, you will notice there are a few buttons:
 * Enter screen SCREEN: sends an entered screen event with the screen name `SCREEN` to Survicate.
 * Leave screen SCREEN: sends a left screen event with the screen name `SCREEN` to Survicate.
 * Set user id = 1 and first name = USER: sends user traits with the correspondent values to Survicate.
-* Reset: if you are testing, this button is useful to reset all that has been sent to Survicate so it can be sent again.
-* Register survey activity listeners: registers listeners that will be called upon some activities, such as "survey displayed", "questions answered", "survey closed" and "survey completed". Upon being called, the values of these callbacks will appear on the example app screen.
+* Reset: if you are testing, this button is useful to reset all data that has been sent to Survicate so it can be sent again.
+* Register survey activity listeners: registers listeners that will be called upon some activities, such as "survey displayed", "question answered", "survey closed" and "survey completed". Upon being called, the values of these callbacks will appear on the example app screen.
 * Unregister survey activity listeners: unregisters the above listeners.
 
-The idea of having these buttons is so you can go to your Survicate account and create surveys with specific targeting in settings so as to be displayed upon the sending of the buttons events.
+The idea of having these buttons is so you can go to your Survicate account and create surveys with specific targeting in settings so as to be displayed upon the sending of the events triggered by clicking the available buttons.
 
 For instance, we can create a survey that will be targeted to be displayed when user attributes `First Name` is `USER`. In this case, this survey will be displayed when you click the button `Set user id = 1 and first name = USER`.
 
@@ -54,7 +54,7 @@ Refer to [Survicate docs](https://help.survicate.com/en/) to learn the details o
 
 ## Implementation details
 
-We obviously recommend you take a look at the very simple implementation of the example app as a general guide on how to use the Survicate Flutter SDK. Roughly, all you need to do is instantiate the class:
+We obviously recommend you take a look at the implementation of the example app as a general guide on how to use the Survicate Flutter SDK. Roughly, all you need to do is instantiate the class:
 
 ```dart
 /// ...
@@ -85,4 +85,4 @@ After that, you can start calling the available methods in the SDK:
 ///...
 ```
 
-Please follow the SDK documentation to better understand the available methods arguments and responses.
+Please follow the SDK documentation in code to better understand the available methods arguments and responses.
