@@ -10,11 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/oakam/survicate/survicate_flutter_sdk/SurvicateFlutterSdkPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/oakam/survicate/survicate_flutter_sdk/SurvicateFlutterSdkPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/user_traits_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_traits_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604571021717</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Completing user traits">
+      <created>1604576234935</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604576234935</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +140,8 @@
     <MESSAGE value="Fixing wrong method names" />
     <MESSAGE value="Fixing bugs in Survicate Answer model" />
     <MESSAGE value="Considering null possibilities in Survicate Answer model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Considering null possibilities in Survicate Answer model" />
+    <MESSAGE value="Completing user traits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing user traits" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="123" width="1480" height="758" key="AVDManager" timestamp="1604571444360">
@@ -144,11 +149,11 @@
     </state>
     <state x="100" y="123" width="1480" height="758" key="AVDManager/0.23.1680.961@0.23.1680.961" timestamp="1604571444360" />
     <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604534743111" />
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604571021538">
-      <screen x="0" y="23" width="1680" height="960" />
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604576234711">
+      <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1604571021538" />
-    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604535663776" />
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604576234711" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1604532042619" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
     <state width="1638" height="216" key="GridCell.Tab.0.bottom" timestamp="1604575863984">
@@ -176,11 +181,11 @@
     </state>
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.961@0.23.1680.961" timestamp="1604535626501" />
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531988945" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604571022985">
-      <screen x="0" y="23" width="1680" height="960" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604576236315">
+      <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.960@0.23.1680.960" timestamp="1604571022985" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604535665286" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604576236315" />
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.963@0.23.1680.963" timestamp="1604532044049" />
     <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604499361150" />
     <state x="532" y="259" width="750" height="490" key="find.popup" timestamp="1604574589173">
