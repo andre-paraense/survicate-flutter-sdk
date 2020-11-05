@@ -25,9 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    if(survicateFlutterSdk == null){
-      survicateFlutterSdk = SurvicateFlutterSdk();
-    }
+    survicateFlutterSdk ??= SurvicateFlutterSdk();
   }
 
   @override
@@ -114,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                         setState(() {
                           surveyIdAnswered = surveyId;
                           questionIdAnswered = questionId;
-                          answer = answer;
+                          this.answer = answer;
                         });
                       },
                       callbackSurveyClosedListener: (surveyId) {
@@ -163,7 +161,7 @@ class _MyAppState extends State<MyApp> {
                   : SizedBox(),
               questionIdAnswered != null
                   ? Text(
-                  'Last question answered id = $questionIdAnswered from survey id = $surveyIdAnswered, answer type ${answer.type}'
+                  'Last question answered id = $questionIdAnswered from survey id = $surveyIdAnswered, answer type ${answer?.type}'
               )
                   : SizedBox(),
               questionIdAnswered != null

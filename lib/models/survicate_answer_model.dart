@@ -12,6 +12,6 @@ class SurvicateAnswerModel {
   SurvicateAnswerModel.fromMap(dynamic survicateAnswerMap)
   : type = survicateAnswerMap['type'],
     id = survicateAnswerMap['id'],
-    ids = List<int>.from(survicateAnswerMap['ids']),
+    ids = survicateAnswerMap['ids'] != null ? List<int>.from(survicateAnswerMap['ids']) : null,
     value = survicateAnswerMap['value'];
 }

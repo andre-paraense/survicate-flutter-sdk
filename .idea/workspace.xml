@@ -8,8 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +35,7 @@
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -85,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604509596936</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixing wrong method names">
+      <created>1604532042820</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604532042820</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -94,30 +101,60 @@
     <MESSAGE value="CI" />
     <MESSAGE value="Cleaning code" />
     <MESSAGE value="Refactoring listeners and Android integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring listeners and Android integration" />
+    <MESSAGE value="Fixing wrong method names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing wrong method names" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="123" width="1480" height="760" key="AVDManager" timestamp="1604530530935">
+    <state x="100" y="123" width="1480" height="760" key="AVDManager" timestamp="1604534743111">
       <screen x="0" y="23" width="1680" height="963" />
     </state>
-    <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604530530935" />
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604509596493">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604534743111" />
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604532042619">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604509596493" />
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1604532042619" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
-    <state x="467" y="213" key="RollbackChangesDialog" timestamp="1604531244880">
+    <state width="1638" height="258" key="GridCell.Tab.0.bottom" timestamp="1604535300978">
       <screen x="0" y="23" width="1680" height="963" />
     </state>
-    <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531244880" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604509598547">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state width="1638" height="258" key="GridCell.Tab.0.bottom/0.23.1680.963@0.23.1680.963" timestamp="1604535300978" />
+    <state width="1638" height="258" key="GridCell.Tab.0.center" timestamp="1604535300978">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state width="1638" height="258" key="GridCell.Tab.0.center/0.23.1680.963@0.23.1680.963" timestamp="1604535300978" />
+    <state width="1638" height="258" key="GridCell.Tab.0.left" timestamp="1604535300978">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state width="1638" height="258" key="GridCell.Tab.0.left/0.23.1680.963@0.23.1680.963" timestamp="1604535300978" />
+    <state width="1638" height="258" key="GridCell.Tab.0.right" timestamp="1604535300978">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state width="1638" height="258" key="GridCell.Tab.0.right/0.23.1680.963@0.23.1680.963" timestamp="1604535300978" />
+    <state x="467" y="213" key="RollbackChangesDialog" timestamp="1604531988945">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531988945" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604532044049">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604509598547" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.963@0.23.1680.963" timestamp="1604532044049" />
     <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604499361150" />
     <state x="532" y="260" width="750" height="490" key="find.popup" timestamp="1604498593967">
       <screen x="0" y="23" width="1680" height="965" />
     </state>
     <state x="532" y="260" width="750" height="490" key="find.popup/0.23.1680.965@0.23.1680.965" timestamp="1604498593967" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/survicate_flutter_sdk.dart</url>
+          <line>61</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
