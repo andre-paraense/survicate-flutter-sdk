@@ -10,7 +10,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftSurvicateFlutterSdkPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftSurvicateFlutterSdkPlugin.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/survicate_flutter_sdk.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/survicate_flutter_sdk.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604581248434</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Example app Readme">
+      <created>1604582435126</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604582435126</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,10 +184,10 @@
     </state>
     <state x="100" y="123" width="1480" height="758" key="AVDManager/0.23.1680.961@0.23.1680.961" timestamp="1604571444360" />
     <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604534743111" />
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604581248301">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604582435002">
+      <screen x="0" y="23" width="1680" height="960" />
     </state>
-    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1604571021538" />
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1604582435002" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604581248301" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1604532042619" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
@@ -202,10 +216,10 @@
     </state>
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.961@0.23.1680.961" timestamp="1604581934168" />
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531988945" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604581249642">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604582435995">
+      <screen x="0" y="23" width="1680" height="960" />
     </state>
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.960@0.23.1680.960" timestamp="1604571022985" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.960@0.23.1680.960" timestamp="1604582435995" />
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604581249642" />
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.963@0.23.1680.963" timestamp="1604532044049" />
     <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604499361150" />

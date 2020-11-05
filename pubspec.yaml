@@ -1,6 +1,6 @@
 name: survicate_flutter_sdk
 description: Survicate mobile survey SDK for Flutter.
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/andre-paraense/lsurvicate-flutter-sdk
 issue_tracker: https://github.com/andre-paraense/survicate-flutter-sdk/issues
 

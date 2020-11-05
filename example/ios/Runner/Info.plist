@@ -41,5 +41,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>Survicate</key>
+    <dict>
+        <key>WorkspaceKey</key>
+    	<string>YOUR_WORKSPACE_KEY</string>
+    </dict>
 </dict>
 </plist>
