@@ -2,7 +2,7 @@
 
 Demonstrates how to use the survicate_flutter_sdk plugin.
 
-## Example
+## Running th app
 
 In order to run the example app, the first step is to create an account at [survicate.com](https://survicate.com). Sign up for free and find your workspace key in the Tracking Code section.
 
@@ -52,3 +52,37 @@ For instance, we can create a survey that will be targeted to be displayed when 
 
 Refer to [Survicate docs](https://help.survicate.com/en/) to learn the details of how to create and configure surveys in the platform.
 
+## Implementation details
+
+We obviously recommend you take a look at the very simple implementation of the example app as a general guide on how to use the Survicate Flutter SDK. Roughly, all you need to do is instantiate the class:
+
+```dart
+/// ...
+class _MyAppState extends State<MyApp> {
+
+  SurvicateFlutterSdk survicateFlutterSdk;
+
+///...
+
+  @override
+  void initState() {
+    super.initState();
+    survicateFlutterSdk ??= SurvicateFlutterSdk();
+  }
+///...
+```
+
+After that, you can start calling the available methods in the SDK:
+
+```dart
+/// ...
+    RaisedButton(
+        onPressed: () {
+            survicateFlutterSdk.invokeEvent('SURVEY');
+        },
+        child: Text('Invoke event SURVEY'),
+     ),
+///...
+```
+
+Please follow the SDK documentation to better understand the available methods arguments and responses.
