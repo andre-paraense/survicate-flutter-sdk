@@ -85,4 +85,4 @@ After that, you can start calling the available methods in the SDK:
 ///...
 ```
 
-Please follow the SDK documentation in code to better understand the available methods arguments and responses.
+Please follow the [SDK documentation](https://pub.dev/documentation/survicate_flutter_sdk/latest/) to better understand the available methods arguments and responses.
