@@ -46,5 +46,9 @@ When you run the example app, you will notice there are a few buttons:
 * Register survey activity listeners: registers listeners that will be called upon some activities, such as "survey displayed", "questions answered", "survey closed" and "survey completed". Upon being called, the values of these callbacks will appear on the example app screen.
 * Unregister survey activity listeners: unregisters the above listeners.
 
+The idea of having these buttons is so you can go to your Survicate account and create surveys with specific targeting in settings so as to be displayed upon the sending of the buttons events.
 
+For instance, we can create a survey that will be targeted to be displayed when user attributes `First Name` is `USER`. In this case, this survey will be displayed when you click the button `Set user id = 1 and first name = USER`.
+
+Refer to [Survicate docs](https://help.survicate.com/en/) to learn the details of how to create and configure surveys in the platform.
 
