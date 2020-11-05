@@ -37,4 +37,14 @@ Thirdly, also configure your workspace key in the `Info.plist` file in the [`exa
 
 After these three first steps, you are ready to run the example app in Android and/or iOS, correctly connected to your Survicate account.
 
+When you run the example app, you will notice there are a few buttons:
+* Invoke event SURVEY: sends an event with the name `SURVEY` to Survicate.
+* Enter screen SCREEN: sends an entered screen event with the screen name `SCREEN` to Survicate.
+* Leave screen SCREEN: sends a left screen event with the screen name `SCREEN` to Survicate.
+* Set user id = 1 and first name = USER: sends user traits with the correspondent values to Survicate.
+* Reset: if you are testing, this button is useful to reset all that has been sent to Survicate so it can be sent again.
+* Register survey activity listeners: registers listeners that will be called upon some activities, such as "survey displayed", "questions answered", "survey closed" and "survey completed". Upon being called, the values of these callbacks will appear on the example app screen.
+* Unregister survey activity listeners: unregisters the above listeners.
+
+
 

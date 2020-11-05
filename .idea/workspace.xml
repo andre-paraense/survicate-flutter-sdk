@@ -116,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604576234935</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Example app Readme">
+      <created>1604577927055</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604577927055</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +148,8 @@
     <MESSAGE value="Fixing bugs in Survicate Answer model" />
     <MESSAGE value="Considering null possibilities in Survicate Answer model" />
     <MESSAGE value="Completing user traits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completing user traits" />
+    <MESSAGE value="Example app Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Example app Readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="123" width="1480" height="758" key="AVDManager" timestamp="1604571444360">
@@ -149,11 +157,11 @@
     </state>
     <state x="100" y="123" width="1480" height="758" key="AVDManager/0.23.1680.961@0.23.1680.961" timestamp="1604571444360" />
     <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604534743111" />
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604576234711">
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604577926914">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1604571021538" />
-    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604576234711" />
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604577926914" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1604532042619" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
     <state width="1638" height="216" key="GridCell.Tab.0.bottom" timestamp="1604575863984">
@@ -181,11 +189,11 @@
     </state>
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.961@0.23.1680.961" timestamp="1604535626501" />
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531988945" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604576236315">
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604577928260">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.960@0.23.1680.960" timestamp="1604571022985" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604576236315" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604577928260" />
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.963@0.23.1680.963" timestamp="1604532044049" />
     <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604499361150" />
     <state x="532" y="259" width="750" height="490" key="find.popup" timestamp="1604574589173">
