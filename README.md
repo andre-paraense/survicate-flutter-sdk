@@ -21,7 +21,7 @@ Check Survicate's [documentation](https://help.survicate.com/en/) for in-depth i
 
 To use this plugin, add `survicate_flutter_sdk` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-Import `package:survicate_flutter_sdk/survicate_flutter_sdk.dart` and instantiate `SurvicateSDKFlutter`.
+Import `package:survicate_flutter_sdk/survicate_flutter_sdk.dart` and instantiate `SurvicateFlutterSdk`.
 
 ### Android integration
 
