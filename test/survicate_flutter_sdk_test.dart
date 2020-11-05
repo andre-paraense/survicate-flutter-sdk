@@ -142,7 +142,7 @@ void main() {
       bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
       expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
       expect(survicateFlutterSdk.onSurveyDisplayedListener('surveyId'), true);
-      expect(survicateFlutterSdk.onQuestionAnsweredListener('surveyId', 1, SurvicateAnswerModel.fromMap({'type':'type', 'id': 1, 'ids' : [1,2,3], 'value': 'value'})), true);
+      expect(survicateFlutterSdk.onQuestionAnsweredListener('surveyId', 1, SurvicateAnswerModel.fromMap({'type':'type', 'id': null, 'ids' : null, 'value': null})), true);
       expect(survicateFlutterSdk.onSurveyClosedListener('surveyId'), true);
       expect(survicateFlutterSdk.onSurveyCompletedListener('surveyId'), true);
     });
