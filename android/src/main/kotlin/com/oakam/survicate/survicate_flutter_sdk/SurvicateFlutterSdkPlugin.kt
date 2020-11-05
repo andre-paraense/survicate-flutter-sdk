@@ -43,14 +43,8 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
       Survicate.leaveScreen(screenName)
       result.success(true)
     } else if (call.method == "setUserTraits") {
-      val userId: String? = call.argument<String>("userId")
-      val firstName: String? = call.argument<String>("firstName")
 
       val traits = ArrayList<UserTrait>()
-      if (userId != null && userId.isNotEmpty())
-        traits.add(UserTrait.UserId(userId))
-      if (firstName != null && firstName.isNotEmpty())
-        traits.add(UserTrait.FirstName(firstName))
 
       for ((key, value) in call.arguments<HashMap<String, String>>()) {
         traits.add(UserTrait(key, value))

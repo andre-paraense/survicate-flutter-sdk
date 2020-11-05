@@ -82,7 +82,29 @@ void main() {
     });
 
     test('Return true if all user traits are not empty', () async {
-      expect(await survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: 'userId',firstName: 'userName',customTraits: {'customKey' : 'customValue'})), true);
+      expect(await survicateFlutterSdk.setUserTraits(
+          UserTraitsModel(
+              userId: 'userId',
+              firstName: 'userName',
+              addressFirstLine: 'addressFirstLine',
+              addressSecondLine: 'addressSecondLine',
+              annualRevenue: 'annualRevenue',
+              city: 'city',
+              department: 'department',
+              email: 'email',
+              employees: 'employees',
+              fax: 'fax',
+              industry: 'industry',
+              jobTitle: 'jobTitle',
+              lastName: 'lastName',
+              organization: 'organization',
+              phone: 'phone',
+              state: 'state',
+              website: 'website',
+              zipCode: 'zipCode',
+              customTraits: {'customKey' : 'customValue'}
+          )
+      ), true);
     });
   });
 
