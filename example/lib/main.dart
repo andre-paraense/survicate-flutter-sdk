@@ -68,9 +68,9 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 onPressed: () {
-                  survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: '1', firstName: 'USER'));
+                  survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: '1', firstName: 'USER', customTraits: <String,String>{'XYPTO':'XYPTO'}));
                 },
-                child: Text('Set userId = 1 and first name = USER'),
+                child: Text('Set userId = 1,  first name = USER and custome traits = {\'XYPTO\':\'XYPTO\'}'),
               ),
               SizedBox(
                 height: 5.0,

@@ -78,13 +78,13 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
 
         override fun onQuestionAnswered(surveyId: String, questionId: Long, answer: SurvicateAnswer) {
           Handler(Looper.getMainLooper()).post(Runnable {
-            val arguments: MutableMap<String, Any> = HashMap()
+            val arguments = HashMap<String, Any?>()
             arguments["surveyId"] = surveyId
             arguments["questionId"] = questionId
-            val answerMap: MutableMap<String, Any?> = HashMap()
+            val answerMap = HashMap<String, Any?>()
             answerMap["type"] = answer.type
             answerMap["id"] = answer.id
-            answerMap["ids"] = answer.ids
+            answerMap["ids"] = answer.ids?.toMutableList()
             answerMap["value"] = answer.value
             arguments["answer"] = answerMap
             try {
