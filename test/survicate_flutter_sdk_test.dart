@@ -5,7 +5,6 @@ import 'package:survicate_flutter_sdk/models/user_traits_model.dart';
 import 'package:survicate_flutter_sdk/survicate_flutter_sdk.dart';
 
 void main() {
-
   const MethodChannel channel = MethodChannel('survicate_flutter_sdk');
 
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +13,6 @@ void main() {
 
   setUpAll(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-
       if (methodCall.method == 'registerSurveyListeners') {
         return true;
       }
@@ -70,20 +68,29 @@ void main() {
     });
 
     test('Return false if user traits are all null', () async {
-      expect(await survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: null,firstName: null,customTraits: null)), false);
+      expect(
+          await survicateFlutterSdk.setUserTraits(UserTraitsModel(
+              userId: null, firstName: null, customTraits: null)),
+          false);
     });
 
     test('Return false if user traits are all empty', () async {
-      expect(await survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: null,firstName: null,customTraits: {})), false);
+      expect(
+          await survicateFlutterSdk.setUserTraits(
+              UserTraitsModel(userId: null, firstName: null, customTraits: {})),
+          false);
     });
 
     test('Return true if any user trait is not empty', () async {
-      expect(await survicateFlutterSdk.setUserTraits(UserTraitsModel(userId: 'userId',firstName: null,customTraits: {})), true);
+      expect(
+          await survicateFlutterSdk.setUserTraits(UserTraitsModel(
+              userId: 'userId', firstName: null, customTraits: {})),
+          true);
     });
 
     test('Return true if all user traits are not empty', () async {
-      expect(await survicateFlutterSdk.setUserTraits(
-          UserTraitsModel(
+      expect(
+          await survicateFlutterSdk.setUserTraits(UserTraitsModel(
               userId: 'userId',
               firstName: 'userName',
               addressFirstLine: 'addressFirstLine',
@@ -102,9 +109,8 @@ void main() {
               state: 'state',
               website: 'website',
               zipCode: 'zipCode',
-              customTraits: {'customKey' : 'customValue'}
-          )
-      ), true);
+              customTraits: {'customKey': 'customValue'})),
+          true);
     });
   });
 
@@ -152,29 +158,81 @@ void main() {
 
   group('registerSurveyListeners', () {
     test('Return false if the callbacks are null', () async {
-      expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: null, callbackQuestionAnsweredListener: null, callbackSurveyClosedListener: null, callbackSurveyCompletedListener: null), false);
+      expect(
+          await survicateFlutterSdk.registerSurveyListeners(
+              callbackSurveyDisplayedListener: null,
+              callbackQuestionAnsweredListener: null,
+              callbackSurveyClosedListener: null,
+              callbackSurveyCompletedListener: null),
+          false);
     });
 
-    test('Return true if the callbacks are passed and previously registered', () async {
-      bool Function(String) previousCallback = (String surveyId) {return false;};
+    test('Return true if the callbacks are passed and previously registered',
+        () async {
+      bool Function(String) previousCallback = (String surveyId) {
+        return false;
+      };
       survicateFlutterSdk.onSurveyDisplayedListener = previousCallback;
-      bool Function(String) newCallback = (String surveyId) {return true;};
-      bool Function(String, num, SurvicateAnswerModel) previousCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return false;};
+      bool Function(String) newCallback = (String surveyId) {
+        return true;
+      };
+      bool Function(String, num, SurvicateAnswerModel)
+          previousCallbackQuestion =
+          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        return false;
+      };
       survicateFlutterSdk.onQuestionAnsweredListener = previousCallbackQuestion;
-      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-      expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        return true;
+      };
+      expect(
+          await survicateFlutterSdk.registerSurveyListeners(
+              callbackSurveyDisplayedListener: newCallback,
+              callbackQuestionAnsweredListener: newCallbackQuestion,
+              callbackSurveyClosedListener: newCallback,
+              callbackSurveyCompletedListener: newCallback),
+          true);
       expect(survicateFlutterSdk.onSurveyDisplayedListener('surveyId'), true);
-      expect(survicateFlutterSdk.onQuestionAnsweredListener('surveyId', 1, SurvicateAnswerModel.fromMap({'type':'type', 'id': null, 'ids' : null, 'value': null})), true);
+      expect(
+          survicateFlutterSdk.onQuestionAnsweredListener(
+              'surveyId',
+              1,
+              SurvicateAnswerModel.fromMap(
+                  {'type': 'type', 'id': null, 'ids': null, 'value': null})),
+          true);
       expect(survicateFlutterSdk.onSurveyClosedListener('surveyId'), true);
       expect(survicateFlutterSdk.onSurveyCompletedListener('surveyId'), true);
     });
 
-    test('Return true if the callback is passed and not previously registered', () async {
-      bool Function(String) newCallback = (String surveyId) {return true;};
-      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-      expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+    test('Return true if the callback is passed and not previously registered',
+        () async {
+      bool Function(String) newCallback = (String surveyId) {
+        return true;
+      };
+      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        return true;
+      };
+      expect(
+          await survicateFlutterSdk.registerSurveyListeners(
+              callbackSurveyDisplayedListener: newCallback,
+              callbackQuestionAnsweredListener: newCallbackQuestion,
+              callbackSurveyClosedListener: newCallback,
+              callbackSurveyCompletedListener: newCallback),
+          true);
       expect(survicateFlutterSdk.onSurveyDisplayedListener('surveyId'), true);
-      expect(survicateFlutterSdk.onQuestionAnsweredListener('surveyId', 1, SurvicateAnswerModel.fromMap({'type':'type', 'id': 1, 'ids' : [1,2,3], 'value': 'value'})), true);
+      expect(
+          survicateFlutterSdk.onQuestionAnsweredListener(
+              'surveyId',
+              1,
+              SurvicateAnswerModel.fromMap({
+                'type': 'type',
+                'id': 1,
+                'ids': [1, 2, 3],
+                'value': 'value'
+              })),
+          true);
       expect(survicateFlutterSdk.onSurveyClosedListener('surveyId'), true);
       expect(survicateFlutterSdk.onSurveyCompletedListener('surveyId'), true);
     });
@@ -186,8 +244,14 @@ void main() {
     });
 
     test('Return true if there was a previous registered listener', () async {
-      bool Function(String) previousCallback = (String surveyId) {return true;};
-      bool Function(String, num, SurvicateAnswerModel) previousCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return false;};
+      bool Function(String) previousCallback = (String surveyId) {
+        return true;
+      };
+      bool Function(String, num, SurvicateAnswerModel)
+          previousCallbackQuestion =
+          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        return false;
+      };
       survicateFlutterSdk.onSurveyDisplayedListener = previousCallback;
       survicateFlutterSdk.onQuestionAnsweredListener = previousCallbackQuestion;
       survicateFlutterSdk.onSurveyClosedListener = previousCallback;
@@ -216,77 +280,164 @@ void main() {
     });
 
     group('onSurveyDisplayedListener', () {
-      test('Return false if there is no survey displayed listener attached', () async {
+      test('Return false if there is no survey displayed listener attached',
+          () async {
         Map<String, String> arguments = {};
         arguments['surveyId'] = 'surveyId';
 
-        expect(await channel.invokeMethod('onSurveyDisplayed', arguments), false);
+        expect(
+            await channel.invokeMethod('onSurveyDisplayed', arguments), false);
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         expect(await channel.invokeMethod('onSurveyDisplayed', null), false);
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, String> arguments = {};
-        expect(await channel.invokeMethod('onSurveyDisplayed', arguments), false);
+        expect(
+            await channel.invokeMethod('onSurveyDisplayed', arguments), false);
       });
 
-      test('Return true if the listener is called with the expected arguments', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+      test('Return true if the listener is called with the expected arguments',
+          () async {
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, String> arguments = {};
         arguments['surveyId'] = 'surveyId';
-        expect(await channel.invokeMethod('onSurveyDisplayed', arguments), true);
+        expect(
+            await channel.invokeMethod('onSurveyDisplayed', arguments), true);
       });
     });
 
     group('onQuestionAnsweredListener', () {
-      test('Return false if there is no survey displayed listener attached', () async {
+      test('Return false if there is no survey displayed listener attached',
+          () async {
         Map<String, dynamic> arguments = {};
         arguments['surveyId'] = 'surveyId';
         arguments['questionId'] = 1;
-        arguments['answer'] = {'type':'type', 'id': 1, 'ids' : [1,2,3], 'value': 'value'};
+        arguments['answer'] = {
+          'type': 'type',
+          'id': 1,
+          'ids': [1, 2, 3],
+          'value': 'value'
+        };
 
-        expect(await channel.invokeMethod('onQuestionAnswered', arguments), false);
+        expect(
+            await channel.invokeMethod('onQuestionAnswered', arguments), false);
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         expect(await channel.invokeMethod('onQuestionAnswered', null), false);
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, dynamic> arguments = {};
-        expect(await channel.invokeMethod('onQuestionAnswered', arguments), false);
+        expect(
+            await channel.invokeMethod('onQuestionAnswered', arguments), false);
       });
 
-      test('Return true if the listener is called with the expected arguments', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+      test('Return true if the listener is called with the expected arguments',
+          () async {
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, dynamic> arguments = {};
         arguments['surveyId'] = 'surveyId';
         arguments['questionId'] = 1;
-        arguments['answer'] = {'type':'type', 'id': 1, 'ids' : [1,2,3], 'value': 'value'};
-        expect(await channel.invokeMethod('onQuestionAnswered', arguments), true);
+        arguments['answer'] = {
+          'type': 'type',
+          'id': 1,
+          'ids': [1, 2, 3],
+          'value': 'value'
+        };
+        expect(
+            await channel.invokeMethod('onQuestionAnswered', arguments), true);
       });
     });
 
     group('onSurveyClosedListener', () {
-      test('Return false if there is no survey displayed listener attached', () async {
+      test('Return false if there is no survey displayed listener attached',
+          () async {
         Map<String, String> arguments = {};
         arguments['surveyId'] = 'surveyId';
 
@@ -294,24 +445,58 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         expect(await channel.invokeMethod('onSurveyClosed', null), false);
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, String> arguments = {};
         expect(await channel.invokeMethod('onSurveyClosed', arguments), false);
       });
 
-      test('Return true if the listener is called with the expected arguments', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+      test('Return true if the listener is called with the expected arguments',
+          () async {
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, String> arguments = {};
         arguments['surveyId'] = 'surveyId';
         expect(await channel.invokeMethod('onSurveyClosed', arguments), true);
@@ -319,35 +504,73 @@ void main() {
     });
 
     group('onSurveyCompletedListener', () {
-      test('Return false if there is no survey displayed listener attached', () async {
+      test('Return false if there is no survey displayed listener attached',
+          () async {
         Map<String, String> arguments = {};
         arguments['surveyId'] = 'surveyId';
 
-        expect(await channel.invokeMethod('onSurveyCompleted', arguments), false);
+        expect(
+            await channel.invokeMethod('onSurveyCompleted', arguments), false);
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         expect(await channel.invokeMethod('onSurveyCompleted', null), false);
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, String> arguments = {};
-        expect(await channel.invokeMethod('onSurveyCompleted', arguments), false);
+        expect(
+            await channel.invokeMethod('onSurveyCompleted', arguments), false);
       });
 
-      test('Return true if the listener is called with the expected arguments', () async {
-        bool Function(String) newCallback = (String surveyId) {return true;};
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion = (String surveyId, num questionId, SurvicateAnswerModel answer) {return true;};
-        expect(await survicateFlutterSdk.registerSurveyListeners(callbackSurveyDisplayedListener: newCallback, callbackQuestionAnsweredListener: newCallbackQuestion, callbackSurveyClosedListener: newCallback, callbackSurveyCompletedListener: newCallback), true);
+      test('Return true if the listener is called with the expected arguments',
+          () async {
+        bool Function(String) newCallback = (String surveyId) {
+          return true;
+        };
+        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          return true;
+        };
+        expect(
+            await survicateFlutterSdk.registerSurveyListeners(
+                callbackSurveyDisplayedListener: newCallback,
+                callbackQuestionAnsweredListener: newCallbackQuestion,
+                callbackSurveyClosedListener: newCallback,
+                callbackSurveyCompletedListener: newCallback),
+            true);
         Map<String, String> arguments = {};
         arguments['surveyId'] = 'surveyId';
-        expect(await channel.invokeMethod('onSurveyCompleted', arguments), true);
+        expect(
+            await channel.invokeMethod('onSurveyCompleted', arguments), true);
       });
     });
   });

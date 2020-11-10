@@ -8,10 +8,13 @@ import 'package:survicate_flutter_sdk/models/user_traits_model.dart';
 class SurvicateFlutterSdk {
   /// listener triggered when survey gets loaded and appears in user’s interface.
   Function(String) onSurveyDisplayedListener;
+
   /// listener triggered after a response submitted to each question.
   Function(String, num, SurvicateAnswerModel) onQuestionAnsweredListener;
+
   /// listener triggered after user closes the survey using the close button.
   Function(String) onSurveyClosedListener;
+
   /// triggered when user responds to their last question and therefore finishes a survey.
   Function(String) onSurveyCompletedListener;
 
@@ -53,13 +56,16 @@ class SurvicateFlutterSdk {
           return false;
         }
 
-        if (!call.arguments.containsKey('surveyId') || !call.arguments.containsKey('questionId') || !call.arguments.containsKey('answer')) {
+        if (!call.arguments.containsKey('surveyId') ||
+            !call.arguments.containsKey('questionId') ||
+            !call.arguments.containsKey('answer')) {
           return false;
         }
 
         String surveyId = call.arguments['surveyId'];
         num questionId = call.arguments['questionId'];
-        SurvicateAnswerModel answer = SurvicateAnswerModel.fromMap(call.arguments['answer']);
+        SurvicateAnswerModel answer =
+            SurvicateAnswerModel.fromMap(call.arguments['answer']);
 
         onQuestionAnsweredListener(surveyId, questionId, answer);
         return true;
@@ -111,17 +117,23 @@ class SurvicateFlutterSdk {
   /// [callbackQuestionAnsweredListener] the listener to be called after a response submitted to each question.
   /// [callbackSurveyClosedListener] the listener to be called after user closes the survey using the close button.
   /// [callbackSurveyCompletedListener] the listener to be called when user responds to their last question and therefore finishes a survey.
-  Future<bool> registerSurveyListeners({
-      Function(String surveyId) callbackSurveyDisplayedListener,
-      Function(String surveyId, num questionId, SurvicateAnswerModel answer) callbackQuestionAnsweredListener,
+  Future<bool> registerSurveyListeners(
+      {Function(String surveyId) callbackSurveyDisplayedListener,
+      Function(String surveyId, num questionId, SurvicateAnswerModel answer)
+          callbackQuestionAnsweredListener,
       Function(String surveyId) callbackSurveyClosedListener,
-      Function(String surveyId) callbackSurveyCompletedListener
-  }) async {
-    if (callbackSurveyDisplayedListener == null || callbackQuestionAnsweredListener == null || callbackSurveyClosedListener == null || callbackSurveyCompletedListener == null) {
+      Function(String surveyId) callbackSurveyCompletedListener}) async {
+    if (callbackSurveyDisplayedListener == null ||
+        callbackQuestionAnsweredListener == null ||
+        callbackSurveyClosedListener == null ||
+        callbackSurveyCompletedListener == null) {
       return false;
     }
 
-    if (onSurveyDisplayedListener != null || onQuestionAnsweredListener != null || onSurveyClosedListener != null || onSurveyCompletedListener != null) {
+    if (onSurveyDisplayedListener != null ||
+        onQuestionAnsweredListener != null ||
+        onSurveyClosedListener != null ||
+        onSurveyCompletedListener != null) {
       onSurveyDisplayedListener = callbackSurveyDisplayedListener;
       onQuestionAnsweredListener = callbackQuestionAnsweredListener;
       onSurveyClosedListener = callbackSurveyClosedListener;
@@ -139,8 +151,10 @@ class SurvicateFlutterSdk {
   /// Unregisters Survey activity listeners
   ///
   Future<bool> unregisterSurveyListeners() async {
-
-    if (onSurveyDisplayedListener == null && onQuestionAnsweredListener == null && onSurveyClosedListener == null && onSurveyCompletedListener == null) {
+    if (onSurveyDisplayedListener == null &&
+        onQuestionAnsweredListener == null &&
+        onSurveyClosedListener == null &&
+        onSurveyCompletedListener == null) {
       return false;
     }
 
@@ -157,7 +171,7 @@ class SurvicateFlutterSdk {
   ///
   /// [eventName] the name of the event to be logged
   Future<bool> invokeEvent(String eventName) async {
-    if(eventName == null || eventName.isEmpty){
+    if (eventName == null || eventName.isEmpty) {
       return false;
     }
 
@@ -173,7 +187,7 @@ class SurvicateFlutterSdk {
   ///
   /// [screenName] the name of the screen the user is entering.
   Future<bool> enterScreen(String screenName) async {
-    if(screenName == null || screenName.isEmpty){
+    if (screenName == null || screenName.isEmpty) {
       return false;
     }
 
@@ -189,7 +203,7 @@ class SurvicateFlutterSdk {
   ///
   /// [screenName] the name of the screen the user is leaving.
   Future<bool> leaveScreen(String screenName) async {
-    if(screenName == null || screenName.isEmpty){
+    if (screenName == null || screenName.isEmpty) {
       return false;
     }
 
@@ -205,12 +219,11 @@ class SurvicateFlutterSdk {
   ///
   /// [userTraits] the  custom attributes to be assigned to your users.
   Future<bool> setUserTraits(UserTraitsModel userTraits) async {
-    if(userTraits == null || userTraits.toMap().isEmpty){
+    if (userTraits == null || userTraits.toMap().isEmpty) {
       return false;
     }
 
     return await _channel.invokeMethod('setUserTraits', userTraits.toMap());
-
   }
 
   /// This method will reset all user data stored on your device (views, traits, answers).

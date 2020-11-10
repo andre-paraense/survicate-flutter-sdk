@@ -7,11 +7,39 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f948c4a8-c655-4298-b639-946ae1d449eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/user_traits_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_traits_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/survicate_flutter_sdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/survicate_flutter_sdk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604600028637</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="CI/CD">
+      <created>1604602311007</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604602311007</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +215,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -201,19 +242,20 @@
     <MESSAGE value="iOS platform code initial implementation" />
     <MESSAGE value="README correction" />
     <MESSAGE value="README corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="README corrections" />
+    <MESSAGE value="CI/CD" />
+    <option name="LAST_COMMIT_MESSAGE" value="CI/CD" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="123" width="1480" height="758" key="AVDManager" timestamp="1604571444360">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="100" y="123" width="1480" height="758" key="AVDManager" timestamp="1605005512048">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
-    <state x="100" y="123" width="1480" height="758" key="AVDManager/0.23.1680.961@0.23.1680.961" timestamp="1604571444360" />
-    <state x="100" y="123" width="1480" height="760" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1604534743111" />
-    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604600028516">
+    <state x="100" y="123" width="1480" height="758" key="AVDManager/0.23.1680.961@0.23.1680.961" timestamp="1605005333969" />
+    <state x="100" y="123" width="1480" height="758" key="AVDManager/0.23.1680.963@0.23.1680.963" timestamp="1605005512048" />
+    <state x="398" y="82" key="CommitChangelistDialog2" timestamp="1604602310875">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1604582435002" />
-    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604600028516" />
+    <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1604602310875" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1604532042619" />
     <state x="398" y="82" key="CommitChangelistDialog2/0.23.1680.965@0.23.1680.965" timestamp="1604499359970" />
     <state width="1638" height="216" key="GridCell.Tab.0.bottom" timestamp="1604575863984">
@@ -236,16 +278,16 @@
     </state>
     <state width="1638" height="216" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1604575863984" />
     <state width="1638" height="258" key="GridCell.Tab.0.right/0.23.1680.963@0.23.1680.963" timestamp="1604535520181" />
-    <state x="467" y="213" key="RollbackChangesDialog" timestamp="1604599107168">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="467" y="213" key="RollbackChangesDialog" timestamp="1605012671562">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
     <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.961@0.23.1680.961" timestamp="1604599107168" />
-    <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1604531988945" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604600029566">
+    <state x="467" y="213" key="RollbackChangesDialog/0.23.1680.963@0.23.1680.963" timestamp="1605012671562" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2" timestamp="1604602312291">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.960@0.23.1680.960" timestamp="1604582435995" />
-    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604600029566" />
+    <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1604602312291" />
     <state x="440" y="231" key="Vcs.Push.Dialog.v2/0.23.1680.963@0.23.1680.963" timestamp="1604532044049" />
     <state x="440" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.965@0.23.1680.965" timestamp="1604499361150" />
     <state x="532" y="259" width="750" height="490" key="find.popup" timestamp="1604574589173">

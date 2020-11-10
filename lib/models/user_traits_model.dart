@@ -1,5 +1,4 @@
 class UserTraitsModel {
-
   final String userId;
   final String firstName;
   final String lastName;
@@ -20,106 +19,104 @@ class UserTraitsModel {
   final String industry;
   final Map<String, String> customTraits;
 
-  UserTraitsModel(
-      {
-        this.userId,
-        this.firstName,
-        this.lastName,
-        this.email,
-        this.organization,
-        this.department,
-        this.jobTitle,
-        this.phone,
-        this.website,
-        this.addressFirstLine,
-        this.addressSecondLine,
-        this.city,
-        this.state,
-        this.zipCode,
-        this.fax,
-        this.annualRevenue,
-        this.employees,
-        this.industry,
-        this.customTraits,
-      }
-  );
+  UserTraitsModel({
+    this.userId,
+    this.firstName,
+    this.lastName,
+    this.email,
+    this.organization,
+    this.department,
+    this.jobTitle,
+    this.phone,
+    this.website,
+    this.addressFirstLine,
+    this.addressSecondLine,
+    this.city,
+    this.state,
+    this.zipCode,
+    this.fax,
+    this.annualRevenue,
+    this.employees,
+    this.industry,
+    this.customTraits,
+  });
 
-  Map<String, String> toMap(){
+  Map<String, String> toMap() {
     Map<String, String> userTraits = <String, String>{};
 
-    if(userId != null){
+    if (userId != null) {
       userTraits['user_id'] = userId;
     }
 
-    if(firstName != null){
+    if (firstName != null) {
       userTraits['first_name'] = firstName;
     }
 
-    if(lastName != null){
+    if (lastName != null) {
       userTraits['last_name'] = lastName;
     }
 
-    if(email != null){
+    if (email != null) {
       userTraits['email'] = email;
     }
 
-    if(organization != null){
+    if (organization != null) {
       userTraits['organization'] = organization;
     }
 
-    if(department != null){
+    if (department != null) {
       userTraits['department'] = department;
     }
 
-    if(jobTitle != null){
+    if (jobTitle != null) {
       userTraits['job_title'] = jobTitle;
     }
 
-    if(phone != null){
+    if (phone != null) {
       userTraits['phone'] = phone;
     }
 
-    if(website != null){
+    if (website != null) {
       userTraits['website'] = website;
     }
 
-    if(addressFirstLine != null){
+    if (addressFirstLine != null) {
       userTraits['address_one'] = addressFirstLine;
     }
 
-    if(addressSecondLine != null){
+    if (addressSecondLine != null) {
       userTraits['address_two'] = addressSecondLine;
     }
 
-    if(city != null){
+    if (city != null) {
       userTraits['city'] = city;
     }
 
-    if(state != null){
+    if (state != null) {
       userTraits['state'] = state;
     }
 
-    if(zipCode != null){
+    if (zipCode != null) {
       userTraits['zip'] = zipCode;
     }
 
-    if(fax != null){
+    if (fax != null) {
       userTraits['fax'] = fax;
     }
 
-    if(annualRevenue != null){
+    if (annualRevenue != null) {
       userTraits['annual_revenue'] = annualRevenue;
     }
 
-    if(employees != null){
+    if (employees != null) {
       userTraits['employees'] = employees;
     }
 
-    if(industry != null){
+    if (industry != null) {
       userTraits['industry'] = industry;
     }
 
-    if(customTraits != null && customTraits.isNotEmpty){
+    if (customTraits != null && customTraits.isNotEmpty) {
       userTraits..addAll(customTraits);
     }
 

@@ -1,6 +1,6 @@
 # Survicate SDK for Flutter
 
-![](https://github.com/andre-paraense/survicate-flutter-sdk/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/andre-paraense/survicate-flutter-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/andre-paraense/survicate-flutter-sdk) [![License: MIT](https://img.shields.io/badge/License-LGPL3.0-green.svg)](https://opensource.org/licenses/LGPL-3.0) [![Pub](https://img.shields.io/pub/v/survicate_flutter_sdk.svg)](https://pub.dartlang.org/packages/survicate_flutter_sdk)
+![](https://github.com/andre-paraense/survicate-flutter-sdk/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/andre-paraense/survicate-flutter-sdk/branch/main/graph/badge.svg?token=LD6NhgFwNt)](https://codecov.io/gh/andre-paraense/survicate-flutter-sdk) [![License: MIT](https://img.shields.io/badge/License-LGPL3.0-green.svg)](https://opensource.org/licenses/LGPL-3.0) [![Pub](https://img.shields.io/pub/v/survicate_flutter_sdk.svg)](https://pub.dartlang.org/packages/survicate_flutter_sdk)
 
 This is a Survicate SDK for Flutter.
 
