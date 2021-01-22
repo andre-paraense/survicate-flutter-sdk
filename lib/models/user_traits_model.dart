@@ -44,82 +44,35 @@ class UserTraitsModel {
   Map<String, String> toMap() {
     Map<String, String> userTraits = <String, String>{};
 
-    if (userId != null) {
-      userTraits['user_id'] = userId;
-    }
-
-    if (firstName != null) {
-      userTraits['first_name'] = firstName;
-    }
-
-    if (lastName != null) {
-      userTraits['last_name'] = lastName;
-    }
-
-    if (email != null) {
-      userTraits['email'] = email;
-    }
-
-    if (organization != null) {
-      userTraits['organization'] = organization;
-    }
-
-    if (department != null) {
-      userTraits['department'] = department;
-    }
-
-    if (jobTitle != null) {
-      userTraits['job_title'] = jobTitle;
-    }
-
-    if (phone != null) {
-      userTraits['phone'] = phone;
-    }
-
-    if (website != null) {
-      userTraits['website'] = website;
-    }
-
-    if (addressFirstLine != null) {
-      userTraits['address_one'] = addressFirstLine;
-    }
-
-    if (addressSecondLine != null) {
-      userTraits['address_two'] = addressSecondLine;
-    }
-
-    if (city != null) {
-      userTraits['city'] = city;
-    }
-
-    if (state != null) {
-      userTraits['state'] = state;
-    }
-
-    if (zipCode != null) {
-      userTraits['zip'] = zipCode;
-    }
-
-    if (fax != null) {
-      userTraits['fax'] = fax;
-    }
-
-    if (annualRevenue != null) {
-      userTraits['annual_revenue'] = annualRevenue;
-    }
-
-    if (employees != null) {
-      userTraits['employees'] = employees;
-    }
-
-    if (industry != null) {
-      userTraits['industry'] = industry;
-    }
+    _insertIntoMap(userTraits, 'user_id', userId);
+    _insertIntoMap(userTraits, 'first_name', firstName);
+    _insertIntoMap(userTraits, 'last_name', lastName);
+    _insertIntoMap(userTraits, 'email', email);
+    _insertIntoMap(userTraits, 'organization', organization);
+    _insertIntoMap(userTraits, 'department', department);
+    _insertIntoMap(userTraits, 'job_title', jobTitle);
+    _insertIntoMap(userTraits, 'phone', phone);
+    _insertIntoMap(userTraits, 'website', website);
+    _insertIntoMap(userTraits, 'address_one', addressFirstLine);
+    _insertIntoMap(userTraits, 'address_two', addressSecondLine);
+    _insertIntoMap(userTraits, 'city', city);
+    _insertIntoMap(userTraits, 'state', state);
+    _insertIntoMap(userTraits, 'zip', zipCode);
+    _insertIntoMap(userTraits, 'fax', fax);
+    _insertIntoMap(userTraits, 'annual_revenue', annualRevenue);
+    _insertIntoMap(userTraits, 'employees', employees);
+    _insertIntoMap(userTraits, 'industry', industry);
 
     if (customTraits != null && customTraits.isNotEmpty) {
-      userTraits..addAll(customTraits);
+      userTraits.addAll(customTraits);
     }
 
     return userTraits;
+  }
+
+  void _insertIntoMap(Map<String, String> map, String key, String value) {
+    if (value != null) {
+      map[key] = value;
+    }
   }
 }

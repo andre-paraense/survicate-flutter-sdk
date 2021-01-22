@@ -1,6 +1,7 @@
 import 'dart:async';
+
 import 'package:flutter/services.dart';
-import 'package:flutter/material.dart';
+
 import 'package:survicate_flutter_sdk/models/survicate_answer_model.dart';
 import 'package:survicate_flutter_sdk/models/user_traits_model.dart';
 
@@ -26,89 +27,67 @@ class SurvicateFlutterSdk {
     _channel.setMethodCallHandler(handlerMethodCalls);
   }
 
-  @visibleForTesting
   Future<dynamic> handlerMethodCalls(MethodCall call) async {
     switch (call.method) {
       case 'onSurveyDisplayed':
-        if (onSurveyDisplayedListener == null) {
-          return false;
-        }
-
-        if (call.arguments == null) {
-          return false;
-        }
-
-        if (!call.arguments.containsKey('surveyId')) {
-          return false;
-        }
-
-        String surveyId = call.arguments['surveyId'];
-
-        onSurveyDisplayedListener(surveyId);
-        return true;
-
+        return _handleSurveyDisplayed(call);
       case 'onQuestionAnswered':
-        if (onQuestionAnsweredListener == null) {
-          return false;
-        }
-
-        if (call.arguments == null) {
-          return false;
-        }
-
-        if (!call.arguments.containsKey('surveyId') ||
-            !call.arguments.containsKey('questionId') ||
-            !call.arguments.containsKey('answer')) {
-          return false;
-        }
-
-        String surveyId = call.arguments['surveyId'];
-        num questionId = call.arguments['questionId'];
-        SurvicateAnswerModel answer =
-            SurvicateAnswerModel.fromMap(call.arguments['answer']);
-
-        onQuestionAnsweredListener(surveyId, questionId, answer);
-        return true;
-
+        return _handleQuestionAnswered(call);
       case 'onSurveyClosed':
-        if (onSurveyClosedListener == null) {
-          return false;
-        }
-
-        if (call.arguments == null) {
-          return false;
-        }
-
-        if (!call.arguments.containsKey('surveyId')) {
-          return false;
-        }
-
-        String surveyId = call.arguments['surveyId'];
-
-        onSurveyClosedListener(surveyId);
-        return true;
-
+        return _handleSurveyClosed(call);
       case 'onSurveyCompleted':
-        if (onSurveyCompletedListener == null) {
-          return false;
-        }
-
-        if (call.arguments == null) {
-          return false;
-        }
-
-        if (!call.arguments.containsKey('surveyId')) {
-          return false;
-        }
-
-        String surveyId = call.arguments['surveyId'];
-
-        onSurveyCompletedListener(surveyId);
-        return true;
+        return _handleSurveyCompleted(call);
 
       default:
         throw MissingPluginException();
     }
+  }
+
+  bool _handleSurveyDisplayed(MethodCall call) {
+    if (onSurveyDisplayedListener == null ||
+        call.arguments == null ||
+        !call.arguments.containsKey('surveyId')) {
+      return false;
+    }
+
+    return onSurveyDisplayedListener(call.arguments['surveyId']);
+  }
+
+  bool _handleQuestionAnswered(MethodCall call) {
+    if (onQuestionAnsweredListener == null ||
+        call.arguments == null ||
+        !call.arguments.containsKey('surveyId') ||
+        !call.arguments.containsKey('questionId') ||
+        !call.arguments.containsKey('answer')) {
+      return false;
+    }
+
+    String surveyId = call.arguments['surveyId'];
+    num questionId = call.arguments['questionId'];
+    SurvicateAnswerModel answer =
+        SurvicateAnswerModel.fromMap(call.arguments['answer']);
+
+    return onQuestionAnsweredListener(surveyId, questionId, answer);
+  }
+
+  bool _handleSurveyClosed(MethodCall call) {
+    if (onSurveyClosedListener == null ||
+        call.arguments == null ||
+        !call.arguments.containsKey('surveyId')) {
+      return false;
+    }
+
+    return onSurveyClosedListener(call.arguments['surveyId']);
+  }
+
+  bool _handleSurveyCompleted(MethodCall call) {
+    if (onSurveyCompletedListener == null ||
+        call.arguments == null ||
+        !call.arguments.containsKey('surveyId')) {
+      return false;
+    }
+
+    return onSurveyCompletedListener(call.arguments['surveyId']);
   }
 
   /// Registers Survey activity listeners
@@ -117,12 +96,13 @@ class SurvicateFlutterSdk {
   /// [callbackQuestionAnsweredListener] the listener to be called after a response submitted to each question.
   /// [callbackSurveyClosedListener] the listener to be called after user closes the survey using the close button.
   /// [callbackSurveyCompletedListener] the listener to be called when user responds to their last question and therefore finishes a survey.
-  Future<bool> registerSurveyListeners(
-      {Function(String surveyId) callbackSurveyDisplayedListener,
-      Function(String surveyId, num questionId, SurvicateAnswerModel answer)
-          callbackQuestionAnsweredListener,
-      Function(String surveyId) callbackSurveyClosedListener,
-      Function(String surveyId) callbackSurveyCompletedListener}) async {
+  Future<bool> registerSurveyListeners({
+    Function(String surveyId) callbackSurveyDisplayedListener,
+    Function(String surveyId, num questionId, SurvicateAnswerModel answer)
+        callbackQuestionAnsweredListener,
+    Function(String surveyId) callbackSurveyClosedListener,
+    Function(String surveyId) callbackSurveyCompletedListener,
+  }) async {
     if (callbackSurveyDisplayedListener == null ||
         callbackQuestionAnsweredListener == null ||
         callbackSurveyClosedListener == null ||
@@ -130,22 +110,16 @@ class SurvicateFlutterSdk {
       return false;
     }
 
-    if (onSurveyDisplayedListener != null ||
-        onQuestionAnsweredListener != null ||
-        onSurveyClosedListener != null ||
-        onSurveyCompletedListener != null) {
-      onSurveyDisplayedListener = callbackSurveyDisplayedListener;
-      onQuestionAnsweredListener = callbackQuestionAnsweredListener;
-      onSurveyClosedListener = callbackSurveyClosedListener;
-      onSurveyCompletedListener = callbackSurveyCompletedListener;
-      return true;
+    if (!_isSurveyListenersRegistered()) {
+      await _channel.invokeMethod('registerSurveyListeners');
     }
 
     onSurveyDisplayedListener = callbackSurveyDisplayedListener;
     onQuestionAnsweredListener = callbackQuestionAnsweredListener;
     onSurveyClosedListener = callbackSurveyClosedListener;
     onSurveyCompletedListener = callbackSurveyCompletedListener;
-    return await _channel.invokeMethod('registerSurveyListeners');
+
+    return _isSurveyListenersRegistered();
   }
 
   /// Unregisters Survey activity listeners
@@ -162,6 +136,7 @@ class SurvicateFlutterSdk {
     onQuestionAnsweredListener = null;
     onSurveyClosedListener = null;
     onSurveyCompletedListener = null;
+    
     return await _channel.invokeMethod('unregisterSurveyListeners');
   }
 
@@ -228,7 +203,11 @@ class SurvicateFlutterSdk {
 
   /// This method will reset all user data stored on your device (views, traits, answers).
   /// If you need to test surveys on your device, this method might be helpful.
-  Future<bool> reset() async {
-    return await _channel.invokeMethod('reset');
-  }
+  Future<bool> reset() async => _channel.invokeMethod('reset');
+
+  bool _isSurveyListenersRegistered() =>
+      onSurveyDisplayedListener != null ||
+      onQuestionAnsweredListener != null ||
+      onSurveyClosedListener != null ||
+      onSurveyCompletedListener != null;
 }
