@@ -131,10 +131,7 @@ class SurvicateFlutterSdk {
   /// Unregisters Survey activity listeners
   ///
   Future<bool> unregisterSurveyListeners() async {
-    if (onSurveyDisplayedListener == null &&
-        onQuestionAnsweredListener == null &&
-        onSurveyClosedListener == null &&
-        onSurveyCompletedListener == null) {
+    if (!_isSurveyListenersRegistered()) {
       return false;
     }
 
