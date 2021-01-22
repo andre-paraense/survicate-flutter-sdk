@@ -169,20 +169,19 @@ void main() {
 
     test('Return true if the callbacks are passed and previously registered',
         () async {
-      bool Function(String) previousCallback = (String surveyId) {
+      SurveyEventHandler previousCallback = (String surveyId) {
         return false;
       };
       survicateFlutterSdk.onSurveyDisplayedListener = previousCallback;
-      bool Function(String) newCallback = (String surveyId) {
+      SurveyEventHandler newCallback = (String surveyId) {
         return true;
       };
-      bool Function(String, num, SurvicateAnswerModel)
-          previousCallbackQuestion =
+      QuestionAnsweredHandler previousCallbackQuestion =
           (String surveyId, num questionId, SurvicateAnswerModel answer) {
         return false;
       };
       survicateFlutterSdk.onQuestionAnsweredListener = previousCallbackQuestion;
-      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+      QuestionAnsweredHandler newCallbackQuestion =
           (String surveyId, num questionId, SurvicateAnswerModel answer) {
         return true;
       };
@@ -207,10 +206,10 @@ void main() {
 
     test('Return true if the callback is passed and not previously registered',
         () async {
-      bool Function(String) newCallback = (String surveyId) {
+      SurveyEventHandler newCallback = (String surveyId) {
         return true;
       };
-      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+      QuestionAnsweredHandler newCallbackQuestion =
           (String surveyId, num questionId, SurvicateAnswerModel answer) {
         return true;
       };
@@ -244,11 +243,10 @@ void main() {
     });
 
     test('Return true if there was a previous registered listener', () async {
-      bool Function(String) previousCallback = (String surveyId) {
+      SurveyEventHandler previousCallback = (String surveyId) {
         return true;
       };
-      bool Function(String, num, SurvicateAnswerModel)
-          previousCallbackQuestion =
+      QuestionAnsweredHandler previousCallbackQuestion =
           (String surveyId, num questionId, SurvicateAnswerModel answer) {
         return false;
       };
@@ -290,10 +288,10 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -308,10 +306,10 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -329,10 +327,10 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -368,10 +366,10 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -386,10 +384,10 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -407,10 +405,10 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -445,10 +443,10 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -463,10 +461,10 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -483,10 +481,10 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -514,10 +512,10 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -532,10 +530,10 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };
@@ -553,10 +551,10 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        SurveyEventHandler newCallback = (String surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
+        QuestionAnsweredHandler newCallbackQuestion =
             (String surveyId, num questionId, SurvicateAnswerModel answer) {
           return true;
         };

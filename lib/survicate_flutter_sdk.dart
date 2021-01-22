@@ -5,19 +5,26 @@ import 'package:flutter/services.dart';
 import 'package:survicate_flutter_sdk/models/survicate_answer_model.dart';
 import 'package:survicate_flutter_sdk/models/user_traits_model.dart';
 
+typedef SurveyEventHandler = bool Function(String);
+typedef QuestionAnsweredHandler = bool Function(
+  String,
+  num,
+  SurvicateAnswerModel,
+);
+
 /// Client for accessing Survicate SDK.
 class SurvicateFlutterSdk {
   /// listener triggered when survey gets loaded and appears in user’s interface.
-  Function(String) onSurveyDisplayedListener;
+  SurveyEventHandler onSurveyDisplayedListener;
 
   /// listener triggered after a response submitted to each question.
   Function(String, num, SurvicateAnswerModel) onQuestionAnsweredListener;
 
   /// listener triggered after user closes the survey using the close button.
-  Function(String) onSurveyClosedListener;
+  SurveyEventHandler onSurveyClosedListener;
 
   /// triggered when user responds to their last question and therefore finishes a survey.
-  Function(String) onSurveyCompletedListener;
+  SurveyEventHandler onSurveyCompletedListener;
 
   static const MethodChannel _channel =
       const MethodChannel('survicate_flutter_sdk');
@@ -97,11 +104,10 @@ class SurvicateFlutterSdk {
   /// [callbackSurveyClosedListener] the listener to be called after user closes the survey using the close button.
   /// [callbackSurveyCompletedListener] the listener to be called when user responds to their last question and therefore finishes a survey.
   Future<bool> registerSurveyListeners({
-    Function(String surveyId) callbackSurveyDisplayedListener,
-    Function(String surveyId, num questionId, SurvicateAnswerModel answer)
-        callbackQuestionAnsweredListener,
-    Function(String surveyId) callbackSurveyClosedListener,
-    Function(String surveyId) callbackSurveyCompletedListener,
+    SurveyEventHandler callbackSurveyDisplayedListener,
+    QuestionAnsweredHandler callbackQuestionAnsweredListener,
+    SurveyEventHandler callbackSurveyClosedListener,
+    SurveyEventHandler callbackSurveyCompletedListener,
   }) async {
     if (callbackSurveyDisplayedListener == null ||
         callbackQuestionAnsweredListener == null ||
@@ -136,7 +142,7 @@ class SurvicateFlutterSdk {
     onQuestionAnsweredListener = null;
     onSurveyClosedListener = null;
     onSurveyCompletedListener = null;
-    
+
     return await _channel.invokeMethod('unregisterSurveyListeners');
   }
 
