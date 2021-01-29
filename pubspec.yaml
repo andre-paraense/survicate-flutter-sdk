@@ -1,6 +1,6 @@
 name: survicate_flutter_sdk
 description: Survicate mobile SDK for Flutter allows you to survey specific groups of your mobile app users to understand their needs, expectations, and objections.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/andre-paraense/survicate-flutter-sdk
 issue_tracker: https://github.com/andre-paraense/survicate-flutter-sdk/issues
 
