@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late SurvicateFlutterSdk survicateFlutterSdk= SurvicateFlutterSdk();
+  SurvicateFlutterSdk survicateFlutterSdk= SurvicateFlutterSdk();
   String? surveyIdDisplayed;
   String? surveyIdAnswered;
   num? questionIdAnswered;
