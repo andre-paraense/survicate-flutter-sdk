@@ -65,7 +65,7 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
             try {
               channel.invokeMethod("onSurveyDisplayed", arguments)
             } catch (e: Exception) {
-              Log.e("onSurveyDisplayed", e.message)
+              e.message?.let { Log.e("onSurveyDisplayed", it) }
             }
           })
         }
@@ -84,7 +84,7 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
             try {
               channel.invokeMethod("onQuestionAnswered", arguments)
             } catch (e: Exception) {
-              Log.e("onQuestionAnswered", e.message)
+              e.message?.let { Log.e("onQuestionAnswered", it) }
             }
           })
         }
@@ -96,7 +96,7 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
             try {
               channel.invokeMethod("onSurveyClosed", arguments)
             } catch (e: Exception) {
-              Log.e("onSurveyClosed", e.message)
+              e.message?.let { Log.e("onSurveyClosed", it) }
             }
           })
         }
@@ -108,7 +108,7 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
             try {
               channel.invokeMethod("onSurveyCompleted", arguments)
             } catch (e: Exception) {
-              Log.e("onSurveyCompleted", e.message)
+              e.message?.let { Log.e("onSurveyCompleted", it) }
             }
           })
         }
