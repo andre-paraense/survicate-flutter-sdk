@@ -169,21 +169,21 @@ void main() {
 
     test('Return true if the callbacks are passed and previously registered',
         () async {
-      bool Function(String) previousCallback = (String surveyId) {
+      bool Function(String?) previousCallback = (String? surveyId) {
         return false;
       };
       survicateFlutterSdk.onSurveyDisplayedListener = previousCallback;
-      bool Function(String) newCallback = (String surveyId) {
+      bool Function(String?) newCallback = (String? surveyId) {
         return true;
       };
-      bool Function(String, num, SurvicateAnswerModel)
+      bool Function(String?, num?, SurvicateAnswerModel)
           previousCallbackQuestion =
-          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
         return false;
       };
       survicateFlutterSdk.onQuestionAnsweredListener = previousCallbackQuestion;
-      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+      bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+          (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
         return true;
       };
       expect(
@@ -193,25 +193,25 @@ void main() {
               callbackSurveyClosedListener: newCallback,
               callbackSurveyCompletedListener: newCallback),
           true);
-      expect(survicateFlutterSdk.onSurveyDisplayedListener('surveyId'), true);
+      expect(survicateFlutterSdk.onSurveyDisplayedListener!('surveyId'), true);
       expect(
-          survicateFlutterSdk.onQuestionAnsweredListener(
+          survicateFlutterSdk.onQuestionAnsweredListener!(
               'surveyId',
               1,
               SurvicateAnswerModel.fromMap(
                   {'type': 'type', 'id': null, 'ids': null, 'value': null})),
           true);
-      expect(survicateFlutterSdk.onSurveyClosedListener('surveyId'), true);
-      expect(survicateFlutterSdk.onSurveyCompletedListener('surveyId'), true);
+      expect(survicateFlutterSdk.onSurveyClosedListener!('surveyId'), true);
+      expect(survicateFlutterSdk.onSurveyCompletedListener!('surveyId'), true);
     });
 
     test('Return true if the callback is passed and not previously registered',
         () async {
-      bool Function(String) newCallback = (String surveyId) {
+      bool Function(String?) newCallback = (String? surveyId) {
         return true;
       };
-      bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+      bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+          (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
         return true;
       };
       expect(
@@ -221,9 +221,9 @@ void main() {
               callbackSurveyClosedListener: newCallback,
               callbackSurveyCompletedListener: newCallback),
           true);
-      expect(survicateFlutterSdk.onSurveyDisplayedListener('surveyId'), true);
+      expect(survicateFlutterSdk.onSurveyDisplayedListener!('surveyId'), true);
       expect(
-          survicateFlutterSdk.onQuestionAnsweredListener(
+          survicateFlutterSdk.onQuestionAnsweredListener!(
               'surveyId',
               1,
               SurvicateAnswerModel.fromMap({
@@ -233,8 +233,8 @@ void main() {
                 'value': 'value'
               })),
           true);
-      expect(survicateFlutterSdk.onSurveyClosedListener('surveyId'), true);
-      expect(survicateFlutterSdk.onSurveyCompletedListener('surveyId'), true);
+      expect(survicateFlutterSdk.onSurveyClosedListener!('surveyId'), true);
+      expect(survicateFlutterSdk.onSurveyCompletedListener!('surveyId'), true);
     });
   });
 
@@ -244,12 +244,12 @@ void main() {
     });
 
     test('Return true if there was a previous registered listener', () async {
-      bool Function(String) previousCallback = (String surveyId) {
+      bool Function(String?) previousCallback = (String? surveyId) {
         return true;
       };
-      bool Function(String, num, SurvicateAnswerModel)
+      bool Function(String?, num?, SurvicateAnswerModel)
           previousCallbackQuestion =
-          (String surveyId, num questionId, SurvicateAnswerModel answer) {
+          (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
         return false;
       };
       survicateFlutterSdk.onSurveyDisplayedListener = previousCallback;
@@ -290,11 +290,11 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -308,11 +308,11 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -329,11 +329,11 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -368,11 +368,11 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -386,11 +386,11 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -407,11 +407,11 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -445,11 +445,11 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -463,11 +463,11 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -483,11 +483,11 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -514,11 +514,11 @@ void main() {
       });
 
       test('Return false if no argument is passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -532,11 +532,11 @@ void main() {
       });
 
       test('Return false if the expected arguments are not passed', () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(
@@ -553,11 +553,11 @@ void main() {
 
       test('Return true if the listener is called with the expected arguments',
           () async {
-        bool Function(String) newCallback = (String surveyId) {
+        bool Function(String?) newCallback = (String? surveyId) {
           return true;
         };
-        bool Function(String, num, SurvicateAnswerModel) newCallbackQuestion =
-            (String surveyId, num questionId, SurvicateAnswerModel answer) {
+        bool Function(String?, num?, SurvicateAnswerModel) newCallbackQuestion =
+            (String? surveyId, num? questionId, SurvicateAnswerModel answer) {
           return true;
         };
         expect(

@@ -1,23 +1,23 @@
 class UserTraitsModel {
-  final String userId;
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String organization;
-  final String department;
-  final String jobTitle;
-  final String phone;
-  final String website;
-  final String addressFirstLine;
-  final String addressSecondLine;
-  final String city;
-  final String state;
-  final String zipCode;
-  final String fax;
-  final String annualRevenue;
-  final String employees;
-  final String industry;
-  final Map<String, String> customTraits;
+  final String? userId;
+  final String? firstName;
+  final String? lastName;
+  final String? email;
+  final String? organization;
+  final String? department;
+  final String? jobTitle;
+  final String? phone;
+  final String? website;
+  final String? addressFirstLine;
+  final String? addressSecondLine;
+  final String? city;
+  final String? state;
+  final String? zipCode;
+  final String? fax;
+  final String? annualRevenue;
+  final String? employees;
+  final String? industry;
+  final Map<String, String>? customTraits;
 
   UserTraitsModel({
     this.userId,
@@ -41,8 +41,8 @@ class UserTraitsModel {
     this.customTraits,
   });
 
-  Map<String, String> toMap() {
-    Map<String, String> userTraits = <String, String>{};
+  Map<String, String?> toMap() {
+    Map<String, String?> userTraits = <String, String?>{};
 
     if (userId != null) {
       userTraits['user_id'] = userId;
@@ -116,8 +116,8 @@ class UserTraitsModel {
       userTraits['industry'] = industry;
     }
 
-    if (customTraits != null && customTraits.isNotEmpty) {
-      userTraits..addAll(customTraits);
+    if (customTraits != null && customTraits!.isNotEmpty) {
+      userTraits..addAll(customTraits!);
     }
 
     return userTraits;
