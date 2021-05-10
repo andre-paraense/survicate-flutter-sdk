@@ -8,21 +8,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ChangeListManager">
@@ -30,31 +16,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/oakam/survicate/survicate_flutter_sdk/SurvicateFlutterSdkPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/oakam/survicate/survicate_flutter_sdk/SurvicateFlutterSdkPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/ios/survicate_flutter_sdk.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/ios/survicate_flutter_sdk.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/survicate_flutter_sdk/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/survicate_flutter_sdk.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/survicate_flutter_sdk.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/survicate_answer_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/user_traits_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_traits_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/survicate_flutter_sdk.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/survicate_flutter_sdk_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/andre.paraense/.android/avd/Pixel_4_API_30.avd]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -254,18 +233,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="CI/CD" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="124" width="1480" height="751" key="AVDManager" timestamp="1616508210464">
+    <state x="100" y="124" width="1480" height="751" key="AVDManager" timestamp="1620641569274">
       <screen x="0" y="25" width="1680" height="954" />
     </state>
-    <state x="100" y="124" width="1480" height="751" key="AVDManager/0.25.1680.954@0.25.1680.954" timestamp="1616508210464" />
+    <state x="100" y="124" width="1480" height="751" key="AVDManager/0.25.1680.954@0.25.1680.954" timestamp="1620641569274" />
     <state x="100" y="125" width="1480" height="753" key="DiffContextDialog" timestamp="1616510585744">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="100" y="125" width="1480" height="753" key="DiffContextDialog/0.25.1680.951@0.25.1680.951" timestamp="1616510585744" />
     <state x="100" y="125" width="1480" height="753" key="DiffContextDialog/0.25.1680.953@0.25.1680.953" timestamp="1616510506263" />
-    <state x="467" y="213" key="RollbackChangesDialog" timestamp="1611150034237">
+    <state x="577" y="207" key="RollbackChangesDialog" timestamp="1620641074792">
       <screen x="0" y="25" width="1680" height="954" />
     </state>
-    <state x="467" y="213" key="RollbackChangesDialog/0.25.1680.954@0.25.1680.954" timestamp="1611150034237" />
+    <state x="577" y="207" key="RollbackChangesDialog/0.25.1680.954@0.25.1680.954" timestamp="1620641074792" />
+    <state x="541" y="255" width="597" height="490" key="find.popup" timestamp="1620643189202">
+      <screen x="0" y="25" width="1680" height="954" />
+    </state>
+    <state x="541" y="255" width="597" height="490" key="find.popup/0.25.1680.954@0.25.1680.954" timestamp="1620643189202" />
   </component>
 </project>

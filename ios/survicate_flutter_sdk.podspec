@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'survicate_flutter_sdk'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Survicate mobile survey SDK for Flutter.'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -15,7 +15,7 @@ A new flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'Survicate', '1.4.3'
+  s.dependency 'Survicate', '1.4.5'
   s.platform = :ios, '10.0'
 
   # Flutter.framework does not contain a i386 slice.

@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Bumping Survicate Android and iOS SDKs
+
 ## 2.0.0
 
 * Null-safety migration
