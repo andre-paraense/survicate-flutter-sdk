@@ -22,7 +22,7 @@ public class SwiftSurvicateFlutterSdkPlugin: NSObject, FlutterPlugin {
         registrar.addMethodCallDelegate(instance, channel: channel)
         FlutterChannel.shared.channel = channel
 
-        Survicate.shared.initialize()
+        SurvicateSdk.shared.initialize()
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -31,19 +31,19 @@ public class SwiftSurvicateFlutterSdkPlugin: NSObject, FlutterPlugin {
         if (call.method == "invokeEvent") {
             let eventName = arguments["eventName"]  ?? ""
 
-            Survicate.shared.invokeEvent(name: eventName)
+            SurvicateSdk.shared.invokeEvent(name: eventName)
 
             result(true)
         } else if (call.method == "enterScreen") {
             let screenName = arguments["screenName"]  ?? ""
 
-            Survicate.shared.enterScreen(value: screenName)
+            SurvicateSdk.shared.enterScreen(value: screenName)
 
             result(true)
         } else if (call.method == "leaveScreen") {
             let screenName = arguments["screenName"]  ?? ""
 
-            Survicate.shared.leaveScreen(value: screenName)
+            SurvicateSdk.shared.leaveScreen(value: screenName)
 
             result(true)
         } else if (call.method == "setUserTraits") {
@@ -53,19 +53,19 @@ public class SwiftSurvicateFlutterSdkPlugin: NSObject, FlutterPlugin {
                 traits.append(UserTrait(withName: key, value: value))
             }
 
-            Survicate.shared.setUserTraits(traits: traits)
+            SurvicateSdk.shared.setUserTraits(traits: traits)
 
             result(true)
         } else if (call.method == "reset") {
-            Survicate.shared.reset()
+            SurvicateSdk.shared.reset()
 
             result(true)
         } else if (call.method == "registerSurveyListeners") {
-            Survicate.shared.delegate = survicateDelegate
+            SurvicateSdk.shared.delegate = survicateDelegate
 
             result(true)
         } else if (call.method == "unregisterSurveyListeners") {
-            Survicate.shared.delegate = nil
+            SurvicateSdk.shared.delegate = nil
 
             result(true)
         } else {
