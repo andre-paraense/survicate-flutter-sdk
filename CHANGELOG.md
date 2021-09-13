@@ -1,3 +1,7 @@
+## 2.1.1
+
+* Cleaning some project files
+
 ## 2.1.0
 
 * Bumping Survicate Android SDK to 1.3.0 and iOS SDK to 1.5.5
