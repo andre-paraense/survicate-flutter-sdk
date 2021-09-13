@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'survicate_flutter_sdk'
-  s.version          = '2.1.0'
+  s.version          = '2.1.1'
   s.summary          = 'Survicate mobile survey SDK for Flutter.'
   s.description      = <<-DESC
 A new flutter plugin project.
