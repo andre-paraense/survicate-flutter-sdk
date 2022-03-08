@@ -1,0 +1,4 @@
+-keep @com.squareup.moshi.JsonQualifier class *
+-keep public class com.survicate.surveys.entities.**
+-keep public class com.survicate.surveys.infrastructure.network.**
+-keep public class com.survicate.surveys.infrastructure.serialization.**
