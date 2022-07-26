@@ -46,7 +46,7 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
 
       val traits = ArrayList<UserTrait>()
 
-      for ((key, value) in call.arguments<HashMap<String, String>>()) {
+      for ((key, value) in call.arguments<HashMap<String, String>>().orEmpty()) {
         traits.add(UserTrait(key, value))
       }
 
