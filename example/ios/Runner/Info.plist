@@ -46,5 +46,7 @@
         <key>WorkspaceKey</key>
     	<string>YOUR_WORKSPACE_KEY</string>
     </dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 </dict>
 </plist>
