@@ -45,9 +45,12 @@ class SurvicateFlutterSdkPlugin: FlutterPlugin, ActivityAware, MethodCallHandler
     } else if (call.method == "setUserTraits") {
 
       val traits = ArrayList<UserTrait>()
+      val arguments = call.arguments<HashMap<String, String>>()
 
-      for ((key, value) in call.arguments<HashMap<String, String>>().orEmpty()) {
-        traits.add(UserTrait(key, value))
+      if (arguments != null) {
+        for ((key, value) in arguments) {
+          traits.add(UserTrait(key, value))
+        }
       }
 
       Survicate.setUserTraits(traits)

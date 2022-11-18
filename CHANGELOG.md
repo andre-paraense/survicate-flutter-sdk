@@ -1,3 +1,8 @@
+## 2.1.2
+
+* Fixing compilation problems in Flutter 3.0 (thanks to @calvin-verticalscope)
+* Bumping Survicate Android SDK to 1.6.5 and iOS SDK to 1.8.1
+
 ## 2.1.1
 
 * Cleaning some project files
